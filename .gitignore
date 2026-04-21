@@ -1,0 +1,5 @@
+output.pdf
+rotated.pdf
+*.aux
+*.log
+text.pdf
