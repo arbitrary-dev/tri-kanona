@@ -17,7 +17,7 @@ output.pdf: text.pdf rotated.pdf
 		rotated.pdf 1,6,5           \
 		text.pdf 2,3,4              \
 		rotated.pdf 7,{},{} \
-		text.pdf 8
+		text.pdf 8,9
 
 clean:
 	rm -f *.log *.aux {output,text,rotated}.pdf
