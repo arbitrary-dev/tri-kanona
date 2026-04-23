@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-VERSION := 0.2.2
+VERSION := 0.3
 
 all: output.pdf
 
@@ -18,8 +18,8 @@ output.pdf: text.pdf rotated.pdf
 		--papersize '{297mm,210mm}' \
 		rotated.pdf 1,6,5           \
 		text.pdf 2,3,4              \
-		rotated.pdf 7,{},{} \
-		text.pdf 8,9
+		rotated.pdf 7,12,11 \
+		text.pdf 8,9,10
 
 clean:
 	rm -f *.log *.aux {output,text,rotated}.pdf
