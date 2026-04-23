@@ -15,7 +15,9 @@ output.pdf: text.pdf rotated.pdf
 	pdfjam --nup 3x2 --outfile $@   \
 		--papersize '{297mm,210mm}' \
 		rotated.pdf 1,6,5           \
-		text.pdf 2,3,4
+		text.pdf 2,3,4              \
+		rotated.pdf 7,{},{} \
+		text.pdf 8
 
 clean:
 	rm -f *.log *.aux {output,text,rotated}.pdf
