@@ -31,6 +31,12 @@
 \usepackage{graphicx}
 \usepackage{caption}
 
+\usepackage{hyperref}
+\hypersetup{
+	pdftitle={Три канона},
+	pdfauthor={Православная Церковь}
+}
+
 
 \makeatletter
 
@@ -52,7 +58,10 @@
 \def\ps@end{%
 \def\@oddhead{}%
 \let\@evenhead\@oddhead
-\def\@oddfoot{\hfil\hbox to 0pt{\hss\tiny\textsf{v\Version}}}%
+\def\@oddfoot{\hfil\hbox to 0pt{\hss\tiny\sffamily%
+	\href{https://github.com/arbitrary-dev/tri-kanona}{%
+	v\Version%
+}}}%
 \let\@evenfoot\@oddfoot
 }%
 
@@ -373,7 +382,7 @@
 
 	\includegraphics[width=0.5\textwidth]{ej-uz-tri-qr.pdf}
 	\captionsetup{font=sf, labelformat=empty}
-	\caption{https://\,ej.uz\,/\,tri}
+	\caption{\href{https://ej.uz/tri}{https://\,ej.uz\,/\,tri}}
 
 	\vspace*{8cm}
 \end{figure}

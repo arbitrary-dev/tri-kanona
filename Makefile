@@ -22,4 +22,4 @@ output.pdf: text.pdf rotated.pdf
 		text.pdf 8,9
 
 clean:
-	rm -f *.log *.aux {output,text,rotated}.pdf
+	rm -f *.log *.aux *.out {output,text,rotated}.pdf
