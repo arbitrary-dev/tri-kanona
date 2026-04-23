@@ -49,6 +49,13 @@
 \let\@evenfoot\@oddfoot
 }%
 
+\def\ps@end{%
+\def\@oddhead{}%
+\let\@evenhead\@oddhead
+\def\@oddfoot{\hfil\hbox to 0pt{\hss\tiny\textsf{v\Version}}}%
+\let\@evenfoot\@oddfoot
+}%
+
 \makeatother
 
 
@@ -56,7 +63,6 @@
 \newcommand{\cuL}[1]{\scalebox{1.5}{\cuKinovarColor#1}}
 
 \newfontfamily\churchslavonicfont[Script=Cyrillic,Ligatures=TeX,HyphenChar=_]{Triodion} % PonomarUnicode.otf
-
 \newfontfamily\cyrillicfontsf{DejaVu Sans}
 
 \hyphenpenalty=10000
@@ -361,7 +367,7 @@
 % QR
 
 \clearpage
-\thispagestyle{empty}
+\thispagestyle{end}
 \begin{figure}[p]
 	\centering
 

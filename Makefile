@@ -1,9 +1,11 @@
 .PHONY: all clean
 
+VERSION := 0.2.2
+
 all: output.pdf
 
 text.pdf: text.tex
-	xelatex $<
+	xelatex "\def\Version{${VERSION}} \input{$<}"
 
 rotated.pdf: text.pdf
 	pdfjam --outfile $@ --angle 180 --fitpaper true $<
