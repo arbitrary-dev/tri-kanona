@@ -52,7 +52,13 @@
 	\hfil%
 }%
 \let\@evenhead\@oddhead
-\def\@oddfoot{\hfil\hbox to 0pt{\hss\usebox\NextWordBox}}%
+\def\@oddfoot{%
+	\ifnum \value{page} = 6%
+		\hfil%
+		\huge\sffamily\rotatebox[origin=c]{180}{↶}%
+	\fi%
+	\hfil\hbox to 0pt{\hss\usebox\NextWordBox}%
+}%
 \let\@evenfoot\@oddfoot
 }%
 
