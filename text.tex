@@ -30,7 +30,7 @@
 
 \usepackage{graphicx}
 \usepackage{caption}
-\usepackage{stackengine}
+\usepackage{stackengine}  % To put version on QR-code
 
 \usepackage{hyperref}
 \hypersetup{
@@ -39,9 +39,25 @@
 }
 
 
+\usepackage{xfp}
+
+\newcommand{\yearText}{%
+	\ifcase \fpeval{randint(0,2)}%
+		Лѣ́то ѿ сотворе́нїѧ мі́ра ҂зфл҃д.% 7534
+	\or%
+		Лѣ́то гдⷭ҇не \cuNum{\the\year}.%
+	\or%
+		В лѣ́то \cuNum{\the\year}. по ржⷭ҇твѣ̀ хрⷭ҇то́вѣ%
+	\fi%
+}
+
+
 \makeatletter
 
-\def\ps@cuNum{%
+\def\ps@cuNum{
+
+% Header
+
 \def\@oddhead{%
 	\ifnum \value{page} = 1%
 		\Large\cuKinovarColor\hfil%
@@ -60,12 +76,15 @@
 		\ifnum \value{page} = 24%
 		\else%
 			\Large\cuKinovarColor\hfil%
-			-- \cuNum{\value{page}} --%
+			-- \cuNum{\value{page}}. --%
 		\fi
 	\fi%
 	\hfil%
-}%
+}
 \let\@evenhead\@oddhead
+
+% Footer
+
 \def\@oddfoot{%
 	\ifnum \value{page} = 6%
 		\hfil\huge\sffamily\rotatebox[origin=c]{180}{↶}%
@@ -78,16 +97,17 @@
 	\ifnum \value{page} = 24%
 		\hfil%
 		\begin{tabular}{c}
-		☦ \cul Гдⷭ҇и і҆и҃се хрⷭ҇тѐ, сн҃е бж҃їй, поми́лꙋй мѧ̀ грѣ́шнаго ☦ \\
-		҂вк҃ѕ.
+		\yearText \\
+		☦ \cul Гдⷭ҇и і҆и҃се хрⷭ҇тѐ, сн҃е бж҃їй, поми́лꙋй мѧ̀ грѣ́шнаго ☦
 		\end{tabular}%
 		\hfil%
 	\else%
 		\hfil\hbox to 0pt{\hss\usebox\NextWordBox}%
 	\fi
-}%
+}
 \let\@evenfoot\@oddfoot
-}%
+
+}
 
 %\def\@texttop{\vfill}
 %\def\@textbottom{\vfill}
@@ -977,7 +997,7 @@
 	\stackinset{r}{12pt}{t}{5pt}{\tiny\sffamily%
 		\href{https://github.com/arbitrary-dev/tri-kanona}{v\Version}%
 	}{%
-		\includegraphics[width=0.4\textwidth]{qr.pdf}% ej-uz-tri-
+		\includegraphics[width=0.4\textwidth]{qr.pdf}%
 	}
 	\captionsetup{font={sf,small}, labelformat=empty, skip=2pt}
 	\caption{\href{https://ej.uz/tri}{http://\,ej.uz\,/\,tri}}
