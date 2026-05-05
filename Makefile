@@ -2,7 +2,7 @@
 
 VERSION := 1.2
 
-all: output.pdf
+all: tri-kanona-${VERSION}.pdf
 
 text.pdf: text.tex
 	xelatex "\def\Version{${VERSION}} \input{$<}"
@@ -10,7 +10,7 @@ text.pdf: text.tex
 rotated.pdf: text.pdf
 	pdfjam --outfile $@ --angle 180 --fitpaper true $<
 
-output.pdf: text.pdf rotated.pdf
+tri-kanona-${VERSION}.pdf: text.pdf rotated.pdf
 	# --papersize have to be specified explicitly
 	# since pdfpages-0.6c mistakenly enlarges page width.
 	# Apparently fixed in pdfpages-0.6f.
@@ -24,6 +24,9 @@ output.pdf: text.pdf rotated.pdf
 		text.pdf    14,15,16 \
 		rotated.pdf   19,24,23 \
 		text.pdf      20,21,22
+
+	# Update version for latest pdf download
+	sed -i -E "s/[0-9]+\.[0-9]+(\.[0-9]+|)/${VERSION}/g" README.md
 
 clean:
 	rm -f *.log *.aux *.out {output,text,rotated}.pdf
