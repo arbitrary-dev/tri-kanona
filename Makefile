@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-VERSION := 1.1
+VERSION := 1.2
 
 all: output.pdf
 
