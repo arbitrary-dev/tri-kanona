@@ -1,11 +1,11 @@
 .PHONY: all clean
 
-VERSION := 1.3.1
+VERSION := 1.4
 
 all: tri-kanona-${VERSION}.pdf
 
 text.pdf: text.tex
-	xelatex "\def\Version{${VERSION}} \input{$<}"
+	lualatex "\def\Version{${VERSION}} \input{$<}"
 
 rotated.pdf: text.pdf
 	pdfjam --outfile $@ --angle 180 --fitpaper true $<
@@ -29,4 +29,4 @@ tri-kanona-${VERSION}.pdf: text.pdf rotated.pdf
 	sed -i -E "s/[0-9]+\.[0-9]+(\.[0-9]+|)/${VERSION}/g" README.md
 
 clean:
-	rm -f *.log *.aux *.out {output,text,rotated}.pdf
+	rm -f *.log *.aux *.out {tri-kanona-${VERSION},text,rotated}.pdf
