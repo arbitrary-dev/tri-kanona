@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-VERSION := 1.5.1
+VERSION := 1.5.3
 
 all: tri-kanona-${VERSION}.pdf
 
