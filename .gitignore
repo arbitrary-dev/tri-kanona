@@ -1,7 +1,12 @@
 tri-kanona-*.pdf
+
+text.pdf
 rotated.pdf
+standalone.pdf
+booklet.pdf
+
 *.aux
 *.log
 *.out
-text.pdf
+
 *.swp

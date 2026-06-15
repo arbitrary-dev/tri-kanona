@@ -1,6 +1,6 @@
 .PHONY: all clean text.pdf
 
-VERSION := 1.6
+VERSION := 1.6.1
 
 all: standalone.pdf booklet.pdf
 	mv standalone.pdf tri-kanona-$(VERSION).pdf
