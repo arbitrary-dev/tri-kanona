@@ -38,7 +38,7 @@ tri-kanona-$(VERSION)b.pdf: text-with-marks.pdf
 		rotated.pdf    19,24,23 \
 		text-with-marks.pdf  20,21,22
 
-	# Update version for latest pdf download
+	# Update versions for latest PDF downloads
 	sed -i -E "s/[0-9]+\.[0-9]+(\.[0-9]+|)/$(VERSION)/g" README.md
 
 clean:
