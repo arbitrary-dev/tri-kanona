@@ -39,11 +39,20 @@
 }
 
 
-\usepackage{xfp}
+\usepackage{expl3}
+
+\ExplSyntaxOn
+\newcommand{\modthree}[2]{
+	\tl_set:Nx\l_tmpa_tl{#2}
+	\tl_remove_all:Nn\l_tmpa_tl{.}
+	\tl_set:Nx#1{\int_eval:n{\int_mod:nn{\l_tmpa_tl}{3}}}
+}
+\ExplSyntaxOff
 
 \newcommand{\yearText}{%
-	\ifcase \fpeval{randint(0,2)}%
-		В лѣ́то ѿ сотворе́нїѧ мі́ра \cuKinovar{҂зфл҃д.}% 7534
+	\modthree{\myresult}{\Version}%
+	\ifcase \myresult%
+		В лѣ́то ѿ сотворе́нїѧ мі́ра \cuKinovar{҂зфл҃д.} % 7534
 	\or%
 		В лѣ́то гдⷭ҇не \cuKinovar{\cuNum{\the\year}.}%
 	\or%
