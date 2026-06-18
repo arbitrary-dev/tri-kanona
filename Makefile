@@ -1,10 +1,10 @@
 .PHONY: all clean text.pdf
 
-VERSION := 1.6.1
+VERSION := 1.6.4
 
 all: standalone.pdf booklet.pdf
-	mv standalone.pdf tri-kanona-$(VERSION).pdf
-	mv booklet.pdf    tri-kanona-$(VERSION)b.pdf
+	cp standalone.pdf tri-kanona-$(VERSION).pdf
+	cp booklet.pdf    tri-kanona-$(VERSION)b.pdf
 
 text.pdf: text.tex
 	lualatex "\relax                \
