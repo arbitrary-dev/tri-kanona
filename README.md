@@ -4,4 +4,4 @@ A tiny christian booklet for [Три канона: покаянный ко Го�
 
 Type `make` to build.
 
-…or get latest PDFs [to read](https://github.com/arbitrary-dev/tri-kanona/releases/download/v1.6.5/tri-kanona-1.6.5.pdf) 📎 [to print](https://github.com/arbitrary-dev/tri-kanona/releases/download/v1.6.5/tri-kanona-1.6.5b.pdf)
+…or get latest PDFs [to read](https://github.com/arbitrary-dev/tri-kanona/releases/download/v1.7/tri-kanona-1.7.pdf) 📎 [to print](https://github.com/arbitrary-dev/tri-kanona/releases/download/v1.7/tri-kanona-1.7b.pdf)
